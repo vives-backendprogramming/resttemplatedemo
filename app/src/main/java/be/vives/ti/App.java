@@ -4,11 +4,7 @@ package be.vives.ti;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
-/**
- * Hello world!
- *
- */
-public class App 
+public class App
 {
 
     private static final String REST_URI
@@ -17,10 +13,6 @@ public class App
     public static void main( String[] args )
     {
         RestTemplate restTemplate = new RestTemplate();
-
-        // Stap 1: als String
-        // ResponseEntity<String> s = restTemplate.getForEntity(REST_URI, String.class);
-        // System.out.println(s);
 
         ResponseEntity<MovieResult> remr = restTemplate.getForEntity(REST_URI, MovieResult.class);
         MovieResult mr = remr.getBody();
