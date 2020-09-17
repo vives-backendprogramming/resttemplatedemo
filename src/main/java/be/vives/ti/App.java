@@ -4,23 +4,19 @@ package be.vives.ti;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
 
     private static final String REST_URI
-            = "http://www.omdbapi.com?s=godfather&apikey=ad524872";
+            = "http://www.omdbapi.com/?s=star wars&apikey=ad524872";
 
     public static void main( String[] args )
     {
         RestTemplate restTemplate = new RestTemplate();
 
         // Stap 1: als String
-        // ResponseEntity<String> s = restTemplate.getForEntity(REST_URI, String.class);
-        // System.out.println(s);
+        // ResponseEntity<String> result = restTemplate.getForEntity(REST_URI, String.class);
+        // System.out.println(result);
 
         ResponseEntity<MovieResult> remr = restTemplate.getForEntity(REST_URI, MovieResult.class);
         MovieResult mr = remr.getBody();
