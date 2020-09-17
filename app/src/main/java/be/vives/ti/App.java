@@ -8,7 +8,7 @@ public class App
 {
 
     private static final String REST_URI
-            = "http://www.omdbapi.com?s=godfather&apikey=ad524872";
+            = "http://www.omdbapi.com/?s=star wars&apikey=ad524872";
 
     public static void main( String[] args )
     {
@@ -19,7 +19,7 @@ public class App
 
         if (mr.getResponse().equals("True")){
             mr.getSearch().stream()
-                    .filter(e -> Integer.parseInt(e.getYear())>1990)
+                    .filter(e -> Integer.parseInt(e.getYear())>2000)
                     .forEach(e-> System.out.println(e));
         }
         else {
