@@ -23,7 +23,7 @@ public class App
 
         if (mr.getResponse().equals("True")){
             mr.getSearch().stream()
-                    .filter(e -> Integer.parseInt(e.getYear())>1990)
+                    .filter(e -> Integer.parseInt(e.getYear())>2000)
                     .forEach(e-> System.out.println(e));
         }
         else {
